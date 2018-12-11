@@ -12,8 +12,8 @@ function* helloSaga() {
 export function* getMovies() {
     try {
         const test = yield call(fetch, 'https://api.themoviedb.org/3/discover/movie?api_key=' + process.env.REACT_APP_API_KEY + '&language=ko&sort_by=popularity.desc&include_adult=true&include_video=false&page=1')
-        const json = yield test.json()
-        console.log(json['results'])
+        const json = yield test.json();
+        console.log(json['results']);
 
         let poster_path = "";
         for(let i=0; i < json['results'].length; i++){
